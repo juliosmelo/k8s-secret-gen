@@ -15,8 +15,6 @@ def create_secrets(pod_yaml):
 
         for container in containers:
             container_name = container['name']
-            print(
-                f"Env vars for container {container_name}")
             pod_environment_variables = container['env']
             for env_var in pod_environment_variables:
                 env_var_name = env_var['name']
