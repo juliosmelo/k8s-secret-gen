@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: my-awesome-pod
+spec:
+  replicas: 1
+  selector:
+    app_name: my-awesome-pod
+  template:
+    metadata:
+      labels:
+        app_name: my-awesome-pod
+    spec:
+      containers:
+        - name: my-awesome-pod
+          image: my-awesome-container-image:latest
+          imagePullPolicy: Always
+          env:
+            - name: ENV
+              value: production
+            - name: DB_DATABASE
+              value: "my_awesome_database"
+            - name: DB_PASSWORD
+              value: "my_awesome_password"
+            - name: DB_PORT
+              value: "12345"
+            - name: DB_USER
+              value: "my_awesome_user"
+            - name: ANY_API_KEY
+              value: "GallowsUnicycleLanguageJollyNavigateThrive"
